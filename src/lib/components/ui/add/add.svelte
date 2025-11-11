@@ -90,7 +90,10 @@
 
 {#snippet AgentOption({ agent: a }: { agent: Agent })}
 	<DropdownMenu.Item
-		onSelect={() => (agent.current = a)}
+		onSelect={() => {
+			agent.current = a;
+			copyAdd.copy([addCommand?.command, ...(addCommand?.args ?? [])].join(' '));
+		}}
 		class="flex items-center justify-between [&_svg]:size-3.5"
 	>
 		<span class="flex items-center gap-2">
