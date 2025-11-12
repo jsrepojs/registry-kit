@@ -30,26 +30,6 @@ export default defineConfig({
 					}
 				]
 			},
-			{
-				name: 'use-agent-selection',
-				type: 'hook',
-				add: 'when-needed',
-				files: [
-					{
-						path: 'src/lib/hooks/use-agent-selection.svelte.ts'
-					}
-				]
-			},
-			{
-				name: 'use-registry-selection',
-				type: 'hook',
-				add: 'when-needed',
-				files: [
-					{
-						path: 'src/lib/hooks/use-registry-selection.svelte.ts'
-					}
-				]
-			},
 			// logos
 			{
 				name: 'pnpm-logo',
@@ -132,10 +112,10 @@ export default defineConfig({
 					}
 				]
 			},
-
 			{
 				name: 'utils',
 				type: 'lib',
+				add: 'when-needed',
 				files: [
 					{
 						path: 'src/lib/utils.ts'
@@ -151,6 +131,16 @@ export default defineConfig({
 				files: [
 					{
 						path: 'src/lib/components/ui/dropdown-menu'
+					}
+				]
+			},
+			{
+				name: 'separator',
+				type: 'ui',
+				add: 'when-needed',
+				files: [
+					{
+						path: 'src/lib/components/ui/separator'
 					}
 				]
 			},
