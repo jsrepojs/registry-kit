@@ -2,6 +2,7 @@
 	import Add from '$lib/components/add.svelte';
 	import * as Demo from '$lib/components/ui/demo';
 	import { LightSwitch } from '$lib/components/ui/light-switch';
+	import AddDemo from '$lib/examples/add-demo.svelte';
 	import { MetaTags } from 'svelte-meta-tags';
 </script>
 
@@ -12,16 +13,32 @@
 		<h1 class="text-center text-4xl font-bold">@registry/kit</h1>
 		<p class="text-center text-lg text-muted-foreground">Components for your registry</p>
 	</div>
-	<div class="w-full max-w-2xl">
-		<Demo.Root>
+	<div class="flex w-full max-w-7xl flex-col gap-6">
+		<Demo.Root mode="iframe" demo="add-demo">
 			<Demo.ActionsGroup class="justify-between">
 				<Demo.Tabs />
 				<Demo.ActionsGroup>
 					<Add item="add" />
+					<Demo.Fullscreen />
 					<LightSwitch />
 				</Demo.ActionsGroup>
 			</Demo.ActionsGroup>
-			<Demo.PreviewCode demo="add-demo" />
+			<Demo.Preview />
+		</Demo.Root>
+		<Demo.Root
+			mode="component"
+			demo={AddDemo}
+			code={import('$lib/examples/add-demo.svelte?raw')}
+		>
+			<Demo.ActionsGroup class="justify-between">
+				<Demo.Tabs />
+				<Demo.ActionsGroup>
+					<Add item="add" />
+					<Demo.Fullscreen />
+					<LightSwitch />
+				</Demo.ActionsGroup>
+			</Demo.ActionsGroup>
+			<Demo.Preview />
 		</Demo.Root>
 	</div>
 </main>

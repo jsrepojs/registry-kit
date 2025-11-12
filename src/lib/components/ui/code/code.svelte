@@ -56,7 +56,7 @@
 
 	:global(pre.shiki:not([data-code-overflow] *):not([data-code-overflow])) {
 		@apply overflow-y-auto;
-		max-height: min(100%, 650px);
+		max-height: 100%;
 	}
 
 	:global(pre.shiki code) {

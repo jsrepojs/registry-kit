@@ -74,6 +74,9 @@ importers:
       package-manager-detector:
         specifier: ^1.5.0
         version: 1.5.0
+      paneforge:
+        specifier: ^1.0.2
+        version: 1.0.2(svelte@5.43.6)
       prettier:
         specifier: ^3.6.2
         version: 3.6.2
@@ -1513,6 +1516,11 @@ packages:
 
   package-manager-detector@1.5.0:
     resolution: {integrity: sha512-uBj69dVlYe/+wxj8JOpr97XfsxH/eumMt6HqjNTmJDf/6NO9s+0uxeOneIz3AsPt2m6y9PqzDzd3ATcU17MNfw==}
+
+  paneforge@1.0.2:
+    resolution: {integrity: sha512-KzmIXQH1wCfwZ4RsMohD/IUtEjVhteR+c+ulb/CHYJHX8SuDXoJmChtsc/Xs5Wl8NHS4L5Q7cxL8MG40gSU1bA==}
+    peerDependencies:
+      svelte: ^5.29.0
 
   parent-module@1.0.1:
     resolution: {integrity: sha512-GQ2EWRpQV8/o+Aw8YqtfZZPfNRWZYkbidE9k5rpl/hC3vtHHBfGm2Ifi6qWV+coDGkrUKZAxE3Lot5kcsRlh+g==}
@@ -3435,6 +3443,12 @@ snapshots:
   package-json-from-dist@1.0.1: {}
 
   package-manager-detector@1.5.0: {}
+
+  paneforge@1.0.2(svelte@5.43.6):
+    dependencies:
+      runed: 0.23.4(svelte@5.43.6)
+      svelte: 5.43.6
+      svelte-toolbelt: 0.9.3(svelte@5.43.6)
 
   parent-module@1.0.1:
     dependencies:

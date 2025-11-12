@@ -1,10 +1,10 @@
 <script lang="ts">
 	let { data } = $props();
 
-	const ComponentPromise = import(`../../../examples/${data.path}.svelte`);
+	const ComponentPromise = import(`$lib/examples/${data.path}.svelte`);
 </script>
 
-<div class="flex size-full h-svh place-items-center justify-center">
+<div class="flex place-items-center justify-center h-svh">
 	{#await ComponentPromise then { default: Component }}
 		<Component />
 	{/await}
