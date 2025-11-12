@@ -10,8 +10,7 @@
 				default: 'bg-primary text-primary-foreground hover:bg-primary/90 shadow-2xs',
 				destructive:
 					'bg-destructive hover:bg-destructive/90 focus-visible:ring-destructive/20 dark:bg-destructive/60 dark:focus-visible:ring-destructive/40 text-white shadow-2xs',
-				outline:
-					'bg-background hover:bg-accent hover:text-accent-foreground dark:border-input dark:bg-input/30 dark:hover:bg-input/50 border shadow-2xs',
+				outline: 'bg-background hover:bg-accent hover:text-accent-foreground border shadow-2xs',
 				secondary: 'bg-secondary text-secondary-foreground hover:bg-secondary/80 shadow-2xs',
 				ghost: 'hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50',
 				link: 'text-primary underline-offset-4 hover:underline'

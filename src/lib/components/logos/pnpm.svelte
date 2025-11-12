@@ -1,9 +1,11 @@
 <script lang="ts">
-	import { cn } from "$lib/utils";
+	import { cn } from '$lib/utils';
 
-	interface Props extends svelte.JSX.SVGProps<SVGSVGElement> {
+	type Props = {
 		class?: string;
-	}
+		width?: number;
+		height?: number;
+	};
 
 	let { class: className, ...restProps }: Props = $props();
 </script>
@@ -11,7 +13,7 @@
 <!-- Dark mode -->
 <svg
 	{...restProps}
-	class={cn("hidden dark:inline", className)}
+	class={cn('hidden dark:inline', className)}
 	viewBox="76.58987244897958 44 164.00775510204068 164"
 	preserveAspectRatio="xMidYMid meet"
 	xmlns="http://www.w3.org/2000/svg"
@@ -54,7 +56,7 @@
 <!-- Light mode -->
 <svg
 	{...restProps}
-	class={cn("inline dark:hidden", className)}
+	class={cn('inline dark:hidden', className)}
 	viewBox="76.58987244897958 44 164.00775510204068 164"
 	preserveAspectRatio="xMidYMid meet"
 	xmlns="http://www.w3.org/2000/svg"
@@ -94,4 +96,3 @@
 		<use href="#c1GWSTH1z7" opacity="1" fill="#4e4e4e" fill-opacity="1" />
 	</g>
 </svg>
-
