@@ -30,6 +30,16 @@ export default defineConfig({
 					}
 				]
 			},
+			{
+				name: 'demo',
+				description: 'Display an interactive demo of a component',
+				type: 'ui',
+				files: [
+					{
+						path: 'src/lib/components/ui/demo'
+					}
+				]
+			},
 			// logos
 			{
 				name: 'pnpm-logo',
@@ -100,7 +110,7 @@ export default defineConfig({
 				files: [
 					{
 						path: 'src/lib/components/logos/bitbucket.svelte'
-				}
+					}
 				]
 			},
 			{
@@ -144,6 +154,26 @@ export default defineConfig({
 					}
 				]
 			},
+			{
+				name: 'resizable',
+				type: 'ui',
+				add: 'when-needed',
+				files: [
+					{
+						path: 'src/lib/components/ui/resizable'
+					}
+				]
+			},
+			{
+				name: 'tabs',
+				type: 'ui',
+				add: 'when-needed',
+				files: [
+					{
+						path: 'src/lib/components/ui/tabs'
+					}
+				]
+			},
 
 			// shadcn-svelte-extras
 			{
@@ -153,6 +183,46 @@ export default defineConfig({
 				files: [
 					{
 						path: 'src/lib/hooks/use-clipboard.svelte.ts'
+					}
+				]
+			},
+			{
+				name: 'button',
+				type: 'ui',
+				add: 'when-needed',
+				files: [
+					{
+						path: 'src/lib/components/ui/button'
+					}
+				]
+			},
+			{
+				name: 'copy-button',
+				type: 'ui',
+				add: 'when-needed',
+				files: [
+					{
+						path: 'src/lib/components/ui/copy-button'
+					}
+				]
+			},
+			{
+				name: 'light-switch',
+				type: 'ui',
+				add: 'when-needed',
+				files: [
+					{
+						path: 'src/lib/components/ui/light-switch'
+					}
+				]
+			},
+			{
+				name: 'code',
+				type: 'ui',
+				add: 'when-needed',
+				files: [
+					{
+						path: 'src/lib/components/ui/code'
 					}
 				]
 			}
