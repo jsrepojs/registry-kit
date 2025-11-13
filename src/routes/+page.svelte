@@ -14,7 +14,7 @@
 		<p class="text-center text-lg text-muted-foreground">Components for your registry</p>
 	</div>
 	<div class="flex w-full max-w-7xl flex-col gap-6">
-		<Demo.Root mode="iframe" demo="add-demo">
+		<Demo.Root>
 			<Demo.ActionsGroup class="justify-between">
 				<Demo.Tabs />
 				<Demo.ActionsGroup>
@@ -23,13 +23,10 @@
 					<LightSwitch />
 				</Demo.ActionsGroup>
 			</Demo.ActionsGroup>
-			<Demo.Preview />
+			<Demo.Preview type="iframe" demo="add-demo" />
+			<Demo.Code />
 		</Demo.Root>
-		<Demo.Root
-			mode="component"
-			demo={AddDemo}
-			code={import('$lib/examples/add-demo.svelte?raw')}
-		>
+		<Demo.Root>
 			<Demo.ActionsGroup class="justify-between">
 				<Demo.Tabs />
 				<Demo.ActionsGroup>
@@ -38,7 +35,10 @@
 					<LightSwitch />
 				</Demo.ActionsGroup>
 			</Demo.ActionsGroup>
-			<Demo.Preview />
+			<Demo.Preview type="component">
+				<AddDemo />
+			</Demo.Preview>
+			<Demo.Code code={import('$lib/examples/add-demo.svelte?raw').then(({ default: code }) => code)} />
 		</Demo.Root>
 	</div>
 </main>
