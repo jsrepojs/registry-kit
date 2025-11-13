@@ -1,7 +1,7 @@
 <script lang="ts">
 	let { data } = $props();
 
-	const ComponentPromise = import(`$lib/examples/${data.path}.svelte`);
+	const ComponentPromise = import(`$lib/demos/${data.path}.svelte`);
 </script>
 
 <div class="flex h-svh place-items-center justify-center">

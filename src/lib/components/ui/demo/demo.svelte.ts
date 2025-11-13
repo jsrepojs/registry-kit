@@ -74,7 +74,7 @@ class DemoCodeState {
 	#demoCode: Promise<string> | undefined = $derived.by(() => {
 		if (!this.root.demo) return undefined;
 
-		return import(`$lib/examples/${this.root.demo}.svelte?raw`).then(({ default: code }) => code);
+		return import(`$lib/demos/${this.root.demo}.svelte?raw`).then(({ default: code }) => code);
 	});
 }
 

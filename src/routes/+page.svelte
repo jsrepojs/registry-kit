@@ -1,7 +1,7 @@
 <script>
 	import Add from '$lib/components/add.svelte';
 	import * as Demo from '$lib/components/ui/demo';
-	import AddDemo from '$lib/examples/add-demo.svelte';
+	import AddDemo from '$lib/demos/add-demo.svelte';
 	import { MetaTags } from 'svelte-meta-tags';
 	import { LightSwitch } from '$lib/components/ui/light-switch';
 	import RegistryKitLogo from '$lib/components/logos/registry-kit.svelte';
@@ -48,7 +48,7 @@
 					<AddDemo />
 				</Demo.Preview>
 				<Demo.Code
-					code={import('$lib/examples/add-demo.svelte?raw').then(({ default: code }) => code)}
+					code={import('$lib/demos/add-demo.svelte?raw').then(({ default: code }) => code)}
 				/>
 			</Demo.Root>
 		</div>
