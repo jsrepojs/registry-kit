@@ -39,6 +39,6 @@ export {
 	DropdownRegistryOption as AddDropdownRegistryOption,
 	DropdownDocsLink as AddDropdownDocsLink,
 	DropdownCopyInit as AddDropdownCopyInit,
-    //
-	AGENTS,
+	//
+	AGENTS
 };

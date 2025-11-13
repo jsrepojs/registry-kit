@@ -19,8 +19,15 @@
 				<Demo.Tabs />
 				<Demo.ActionsGroup>
 					<Add item="add" />
-					<Demo.Fullscreen />
-					<LightSwitch />
+					<Demo.ControlGroup>
+						<Demo.ControlSizeMobile />
+						<Demo.ControlSizeTablet />
+						<Demo.ControlSizeDesktop />
+						<Demo.ControlGroupSeparator />
+						<Demo.Fullscreen />
+						<Demo.ControlGroupSeparator />
+						<Demo.ControlRefresh />
+					</Demo.ControlGroup>
 				</Demo.ActionsGroup>
 			</Demo.ActionsGroup>
 			<Demo.Preview type="iframe" demo="add-demo" />
@@ -38,7 +45,9 @@
 			<Demo.Preview type="component">
 				<AddDemo />
 			</Demo.Preview>
-			<Demo.Code code={import('$lib/examples/add-demo.svelte?raw').then(({ default: code }) => code)} />
+			<Demo.Code
+				code={import('$lib/examples/add-demo.svelte?raw').then(({ default: code }) => code)}
+			/>
 		</Demo.Root>
 	</div>
 </main>

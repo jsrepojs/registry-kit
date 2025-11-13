@@ -9,7 +9,10 @@
 	}: Omit<ComponentProps<typeof DropdownMenu.Item>, 'onSelect'> = $props();
 </script>
 
-<DropdownMenu.Item onSelect={() => window.open('https://v3.jsrepo.dev/docs/cli/add', '_blank')} {...rest}>
+<DropdownMenu.Item
+	onSelect={() => window.open('https://v3.jsrepo.dev/docs/cli/add', '_blank')}
+	{...rest}
+>
 	<ExternalLink class="size-4" />
 	<span class="text-sm">View CLI Documentation</span>
 </DropdownMenu.Item>

@@ -21,9 +21,12 @@
 
 	let { type, demo, children }: Props = $props();
 
-	useDemoPreview({
+	let resizableRef = $state<Resizable.Pane | null>(null);
+
+	const previewState = useDemoPreview({
 		type: box.with(() => type),
-		demo: box.with(() => demo)
+		demo: box.with(() => demo),
+		resizableRef: box.with(() => resizableRef)
 	});
 </script>
 
@@ -40,15 +43,18 @@
 	{:else}
 		<Resizable.PaneGroup direction="horizontal">
 			<Resizable.Pane
+				bind:this={resizableRef}
 				defaultSize={100}
 				class="relative rounded-md border border-border bg-background"
 			>
-				<iframe
-					title="Preview {demo}"
-					src={`/demos/${demo}`}
-					loading="lazy"
-					class="relative z-20 h-full w-full"
-				></iframe>
+				{#key previewState.root.previewKey}
+					<iframe
+						title="Preview {demo}"
+						src={`/demos/${demo}`}
+						loading="lazy"
+						class="relative z-20 h-full w-full"
+					></iframe>
+				{/key}
 			</Resizable.Pane>
 			<Resizable.Handle
 				withHandle

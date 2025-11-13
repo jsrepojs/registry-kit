@@ -13,10 +13,6 @@
 </svelte:head>
 
 <ModeWatcher />
-<AddProvider
-	agent="pnpm"
-	registryOptions={REGISTRIES}
-	registry="@registry/kit"
->
+<AddProvider agent="pnpm" registryOptions={REGISTRIES} registry="@registry/kit">
 	{@render children()}
 </AddProvider>

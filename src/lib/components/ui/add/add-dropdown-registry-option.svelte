@@ -13,7 +13,9 @@
 		...rest
 	}: Omit<ComponentProps<typeof DropdownMenu.Item>, 'onSelect'> & { registry: string } = $props();
 
-	const dropdownRegistryOptionState = useAddDropdownRegistryOption({ registry: box.with(() => registry) });
+	const dropdownRegistryOptionState = useAddDropdownRegistryOption({
+		registry: box.with(() => registry)
+	});
 </script>
 
 <DropdownMenu.Item

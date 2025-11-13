@@ -7,7 +7,7 @@
 		agent: Agent;
 		registryOptions: RegistryOptions;
 		registry: NoInfer<RegistryOptions[number]>;
-        children: Snippet;
+		children: Snippet;
 	};
 
 	let { agent, registry, registryOptions, children }: Props<RegistryOptions> = $props();

@@ -5,7 +5,7 @@
 	const REGISTRY_OPTIONS = ['@registry/kit', 'github/jsrepojs/registry-kit'] as const;
 </script>
 
-<div class="flex place-items-center justify-center size-full">
+<div class="flex size-full place-items-center justify-center">
 	<Add.Provider agent="pnpm" registryOptions={REGISTRY_OPTIONS} registry="@registry/kit">
 		<Add.Root item="add">
 			<Add.Group>

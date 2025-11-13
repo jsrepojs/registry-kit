@@ -31,17 +31,17 @@ export type RootProps = ReadableBoxedValues<{
 }>;
 
 class AddRootState {
-    clipboard = new UseClipboard({ delay: 2000 });
-    
+	clipboard = new UseClipboard({ delay: 2000 });
+
 	constructor(
 		readonly opts: RootProps,
 		readonly provider: AddProviderState<readonly string[]>
 	) {}
 
-    get registryOptions() {
-        return this.provider.opts.registryOptions.current;
-    }
-    
+	get registryOptions() {
+		return this.provider.opts.registryOptions.current;
+	}
+
 	addCommand: string = $derived.by(() => {
 		const command = resolveCommand(this.agent, 'execute', [
 			'jsrepo',
@@ -55,80 +55,82 @@ class AddRootState {
 	});
 
 	initCommand: string = $derived.by(() => {
-		const command = resolveCommand(this.agent, 'execute', [
-			'jsrepo',
-			'init',
-			this.registry
-		]);
+		const command = resolveCommand(this.agent, 'execute', ['jsrepo', 'init', this.registry]);
 
 		return command
 			? `${command.command} ${command.args.join(' ')}`
 			: `npx jsrepo init ${this.registry}`;
 	});
 
-    get registry() {
-        return this.provider.opts.registry.current;
-    }
+	get registry() {
+		return this.provider.opts.registry.current;
+	}
 
-    set registry(value: string) {
-        this.provider.opts.registry.current = value;
-    }
+	set registry(value: string) {
+		this.provider.opts.registry.current = value;
+	}
 
-    get agent() {
-        return this.provider.opts.agent.current;
-    }
+	get agent() {
+		return this.provider.opts.agent.current;
+	}
 
-    set agent(value: Agent) {
-        this.provider.opts.agent.current = value;
-    }
+	set agent(value: Agent) {
+		this.provider.opts.agent.current = value;
+	}
 }
 
 const AddCtx = new Context<AddRootState>('add-ctx');
 
 class AddButtonState {
-    constructor(readonly root: AddRootState) {}
+	constructor(readonly root: AddRootState) {}
 
-    props = $derived.by(() => ({
-        onclick: () => this.root.clipboard.copy(this.root.addCommand),
-    }))
+	props = $derived.by(() => ({
+		onclick: () => this.root.clipboard.copy(this.root.addCommand)
+	}));
 }
 
 type AddDropdownAgentOptionProps = ReadableBoxedValues<{
-    agent: Agent;
+	agent: Agent;
 }>;
 
 class AddDropdownAgentOptionState {
-    constructor(readonly opts: AddDropdownAgentOptionProps, readonly root: AddRootState) {}
+	constructor(
+		readonly opts: AddDropdownAgentOptionProps,
+		readonly root: AddRootState
+	) {}
 
-    props = $derived.by(() => ({
-        onSelect: () => {
-            this.root.agent = this.opts.agent.current;
-            this.root.clipboard.copy(this.root.addCommand);
-        },
-    }))
+	props = $derived.by(() => ({
+		onSelect: () => {
+			this.root.agent = this.opts.agent.current;
+			this.root.clipboard.copy(this.root.addCommand);
+		}
+	}));
 }
 
 type AddDropdownRegistryOptionProps = ReadableBoxedValues<{
-    registry: string;
+	registry: string;
 }>;
 
 class AddDropdownRegistryOptionState {
-    constructor(readonly opts: AddDropdownRegistryOptionProps, readonly root: AddRootState) {}
+	constructor(
+		readonly opts: AddDropdownRegistryOptionProps,
+		readonly root: AddRootState
+	) {}
 
-    props = $derived.by(() => ({
-        onSelect: () => {
-            this.root.registry = this.opts.registry.current;
-            this.root.clipboard.copy(this.root.addCommand);
-        },
-    }))
+	props = $derived.by(() => ({
+		onSelect: () => {
+			this.root.registry = this.opts.registry.current;
+			this.root.clipboard.copy(this.root.addCommand);
+		}
+	}));
 }
 
 class AddDropdownCopyInitState {
-    constructor(readonly root: AddRootState) {}
+	constructor(readonly root: AddRootState) {}
 
-    props = $derived.by(() => ({
-        onSelect: () => this.root.clipboard.copy(this.root.initCommand),
-    }))
+	props = $derived.by(() => ({
+		onSelect: () => this.root.clipboard.copy(this.root.initCommand)
+	}));
 }
 
 export function useAdd(props: RootProps) {

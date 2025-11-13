@@ -1,12 +1,12 @@
 <script lang="ts">
-    import { REGISTRIES } from '$lib/constants';
+	import { REGISTRIES } from '$lib/constants';
 	import * as Add from '$lib/components/ui/add';
 
-    type Props = {
-        item: string;
-    };
+	type Props = {
+		item: string;
+	};
 
-    let { item }: Props = $props();
+	let { item }: Props = $props();
 </script>
 
 <Add.Root {item}>

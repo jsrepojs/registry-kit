@@ -1,6 +1,9 @@
+import { goto } from '$app/navigation';
+import { resolve } from '$app/paths';
 import type { DemoPath } from '$lib/examples';
-import { Context } from 'runed';
+import { Context, watch } from 'runed';
 import type { ReadableBoxedValues, WritableBoxedValues } from 'svelte-toolbelt';
+import type * as Resizable from '$lib/components/ui/resizable';
 
 export type TabValue = 'preview' | 'code';
 export type Mode = 'iframe' | 'component';
@@ -10,7 +13,9 @@ type DemoRootProps = WritableBoxedValues<{
 }>;
 
 class DemoState {
+	previewKey = $state<number>(0);
 	demo = $state<DemoPath>();
+	resizableRef = $state<Resizable.Pane | null>(null);
 	constructor(readonly opts: DemoRootProps) {}
 }
 
@@ -19,6 +24,7 @@ const DemoRootCtx = new Context<DemoState>('demo-root-ctx');
 type DemoPreviewProps = ReadableBoxedValues<{
 	type: 'iframe' | 'component';
 	demo: DemoPath | undefined;
+	resizableRef: Resizable.Pane | null;
 }>;
 
 class DemoPreviewState {
@@ -26,7 +32,18 @@ class DemoPreviewState {
 		readonly opts: DemoPreviewProps,
 		readonly root: DemoState
 	) {
-		this.root.demo = this.opts.demo.current;
+		watch(
+			() => this.opts.demo.current,
+			(v) => {
+				this.root.demo = v;
+			}
+		);
+		watch(
+			() => this.opts.resizableRef?.current,
+			(v) => {
+				this.root.resizableRef = v;
+			}
+		);
 	}
 }
 
@@ -55,6 +72,44 @@ class DemoCodeState {
 	});
 }
 
+type DemoControlGroupProps = {};
+
+class DemoControlGroupState {
+	constructor(
+		readonly opts: DemoControlGroupProps,
+		readonly root: DemoState
+	) {}
+
+	onValueChange(value: number) {
+		if (value < 0 || value > 100) return;
+		this.root.resizableRef?.resize(value);
+	}
+}
+
+class RefreshState {
+	constructor(readonly root: DemoState) {
+		this.refresh = this.refresh.bind(this);
+	}
+
+	refresh() {
+		this.root.previewKey++;
+	}
+}
+
+class FullscreenState {
+	constructor(readonly root: DemoState) {
+		this.fullscreen = this.fullscreen.bind(this);
+	}
+
+	async fullscreen() {
+		await goto(resolve(`/demos/${this.root.demo}`));
+	}
+}
+
+class SizeControlState {
+	constructor(readonly root: DemoState) {}
+}
+
 export function useDemo(props: DemoRootProps) {
 	return DemoRootCtx.set(new DemoState(props));
 }
@@ -65,4 +120,20 @@ export function useDemoPreview(props: DemoPreviewProps) {
 
 export function useDemoCode(props: DemoCodeProps) {
 	return new DemoCodeState(props, DemoRootCtx.get());
+}
+
+export function useDemoControlGroup(props: DemoControlGroupProps) {
+	return new DemoControlGroupState(props, DemoRootCtx.get());
+}
+
+export function useDemoFullscreen() {
+	return new FullscreenState(DemoRootCtx.get());
+}
+
+export function useDemoRefresh() {
+	return new RefreshState(DemoRootCtx.get());
+}
+
+export function useDemoSizeControl() {
+	return new SizeControlState(DemoRootCtx.get());
 }
