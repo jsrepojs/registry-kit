@@ -45,6 +45,8 @@
 			<Resizable.Pane
 				bind:this={resizableRef}
 				defaultSize={100}
+				minSize={30}
+				onResize={previewState.onResize}
 				class="relative rounded-md border border-border bg-background"
 			>
 				{#key previewState.root.previewKey}

@@ -13,6 +13,7 @@ type DemoRootProps = WritableBoxedValues<{
 }>;
 
 class DemoState {
+	previewSize = $state<number>(100);
 	previewKey = $state<number>(0);
 	demo = $state<DemoPath>();
 	resizableRef = $state<Resizable.Pane | null>(null);
@@ -44,6 +45,12 @@ class DemoPreviewState {
 				this.root.resizableRef = v;
 			}
 		);
+
+		this.onResize = this.onResize.bind(this);
+	}
+
+	onResize(size: number) {
+		this.root.previewSize = size;
 	}
 }
 
@@ -72,13 +79,22 @@ class DemoCodeState {
 	});
 }
 
-type DemoControlGroupProps = {};
+type DemoControlGroupProps = WritableBoxedValues<{
+	size: number;
+}>;
 
 class DemoControlGroupState {
 	constructor(
 		readonly opts: DemoControlGroupProps,
 		readonly root: DemoState
-	) {}
+	) {
+		watch(
+			() => this.root.previewSize,
+			(v) => {
+				this.opts.size.current = v;
+			}
+		);
+	}
 
 	onValueChange(value: number) {
 		if (value < 0 || value > 100) return;

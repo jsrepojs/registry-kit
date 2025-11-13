@@ -3,6 +3,8 @@
  * Do not edit it manually.
  */
 
-export const DEMO_PATHS = ['add-demo'] as const;
+export const DEMO_PATHS = [
+	'add-demo', 'demo-demo'
+] as const;
 
-export type DemoPath = (typeof DEMO_PATHS)[number];
+export type DemoPath = typeof DEMO_PATHS[number];

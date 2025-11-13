@@ -26,7 +26,8 @@ export default defineConfig({
 					},
 					{
 						path: 'src/lib/examples/add-demo.svelte',
-						type: 'registry:example'
+						type: 'registry:example',
+						dependencyResolution: 'manual'
 					}
 				]
 			},
@@ -37,6 +38,11 @@ export default defineConfig({
 				files: [
 					{
 						path: 'src/lib/components/ui/demo'
+					},
+					{
+						path: 'src/lib/examples/demo-demo.svelte',
+						type: 'registry:example',
+						dependencyResolution: 'manual'
 					}
 				]
 			},
@@ -171,6 +177,26 @@ export default defineConfig({
 				files: [
 					{
 						path: 'src/lib/components/ui/tabs'
+					}
+				]
+			},
+			{
+				name: 'toggle',
+				type: 'ui',
+				add: 'when-needed',
+				files: [
+					{
+						path: 'src/lib/components/ui/toggle'
+					}
+				]
+			},
+			{
+				name: 'toggle-group',
+				type: 'ui',
+				add: 'when-needed',
+				files: [
+					{
+						path: 'src/lib/components/ui/toggle-group'
 					}
 				]
 			},
