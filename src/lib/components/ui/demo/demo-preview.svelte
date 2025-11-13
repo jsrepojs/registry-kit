@@ -4,13 +4,12 @@
 	import { cn } from '$lib/utils';
 	import { useDemoPreview } from './demo.svelte.js';
 	import type { Snippet } from 'svelte';
-	import type { DemoPath } from '$lib/examples/index.js';
 	import { box } from 'svelte-toolbelt';
 
 	type Props =
 		| {
 				type: 'iframe';
-				demo: DemoPath;
+				demo: string;
 				children?: undefined;
 		  }
 		| {

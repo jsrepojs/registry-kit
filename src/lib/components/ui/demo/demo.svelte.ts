@@ -1,6 +1,5 @@
 import { goto } from '$app/navigation';
 import { resolve } from '$app/paths';
-import type { DemoPath } from '$lib/examples';
 import { Context, watch } from 'runed';
 import type { ReadableBoxedValues, WritableBoxedValues } from 'svelte-toolbelt';
 import type * as Resizable from '$lib/components/ui/resizable';
@@ -15,7 +14,7 @@ type DemoRootProps = WritableBoxedValues<{
 class DemoState {
 	previewSize = $state<number>(100);
 	previewKey = $state<number>(0);
-	demo = $state<DemoPath>();
+	demo = $state<string>();
 	resizableRef = $state<Resizable.Pane | null>(null);
 	constructor(readonly opts: DemoRootProps) {}
 }
@@ -24,7 +23,7 @@ const DemoRootCtx = new Context<DemoState>('demo-root-ctx');
 
 type DemoPreviewProps = ReadableBoxedValues<{
 	type: 'iframe' | 'component';
-	demo: DemoPath | undefined;
+	demo: string | undefined;
 	resizableRef: Resizable.Pane | null;
 }>;
 
