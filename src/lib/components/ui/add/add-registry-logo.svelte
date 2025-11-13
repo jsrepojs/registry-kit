@@ -13,9 +13,15 @@
 		class?: string;
 		width?: number;
 		height?: number;
+		fallbackIcon?: Component<{ class?: string; width?: number; height?: number }>;
 	};
 
-	let { registry, class: className, ...rest }: Props = $props();
+	let {
+		registry,
+		class: className,
+		fallbackIcon: FallbackIcon = ServerIcon,
+		...rest
+	}: Props = $props();
 
 	const logos: { matches: (r: string) => boolean; logo: Component }[] = [
 		{
@@ -46,5 +52,5 @@
 {#if logo}
 	<logo.logo class={className} {...rest} />
 {:else}
-	<ServerIcon class={cn('text-muted-foreground', className)} {...rest} />
+	<FallbackIcon class={cn('text-muted-foreground', className)} {...rest} />
 {/if}

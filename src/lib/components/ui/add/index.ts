@@ -11,7 +11,7 @@ import DropdownRegistryOption from './add-dropdown-registry-option.svelte';
 import DropdownDocsLink from './add-dropdown-docs-link.svelte';
 import DropdownCopyInit from './add-dropdown-copy-init.svelte';
 
-import { AGENTS } from './add.svelte.js';
+import { AGENTS, type Agent } from './add.svelte.js';
 
 export {
 	Provider,
@@ -40,5 +40,6 @@ export {
 	DropdownDocsLink as AddDropdownDocsLink,
 	DropdownCopyInit as AddDropdownCopyInit,
 	//
-	AGENTS
+	AGENTS,
+	type Agent
 };

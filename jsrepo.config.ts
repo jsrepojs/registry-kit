@@ -1,4 +1,5 @@
 import { defineConfig } from 'jsrepo';
+import { repository, distributed } from 'jsrepo/outputs';
 import { demoOutput } from './src/lib/outputs/demo-output';
 
 export default defineConfig({
@@ -13,7 +14,7 @@ export default defineConfig({
 	},
 	registry: {
 		name: '@registry/kit',
-		outputs: [demoOutput()],
+		outputs: [demoOutput(), repository({ format: true }), distributed({ dir: 'static/r' })],
 		items: [
 			// registry kit
 			{
@@ -125,6 +126,15 @@ export default defineConfig({
 				files: [
 					{
 						path: 'src/lib/components/logos/azure-devops.svelte'
+					}
+				]
+			},
+			{
+				name: 'registry-kit-logo',
+				type: 'logo',
+				files: [
+					{
+						path: 'src/lib/components/logos/registry-kit.svelte'
 					}
 				]
 			},

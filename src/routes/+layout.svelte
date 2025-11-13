@@ -1,11 +1,19 @@
 <script lang="ts">
 	import '../app.css';
-	import favicon from '$lib/assets/favicon.svg';
-	import { ModeWatcher } from 'mode-watcher';
+	import favicon from '$lib/assets/favicon-light.svg';
+	import { ModeWatcher, mode } from 'mode-watcher';
 	import { AddProvider } from '$lib/components/ui/add';
 	import { REGISTRIES } from '$lib/constants';
+	import { PersistedState } from 'runed';
+	import type { Agent } from '$lib/components/ui/add';
 
 	let { children } = $props();
+
+	const agent = new PersistedState<Agent>('user-agent-preference', 'pnpm');
+	const registry = new PersistedState<(typeof REGISTRIES)[number]>(
+		'user-registry-preference',
+		'@registry/kit'
+	);
 </script>
 
 <svelte:head>
@@ -13,6 +21,10 @@
 </svelte:head>
 
 <ModeWatcher />
-<AddProvider agent="pnpm" registryOptions={REGISTRIES} registry="@registry/kit">
+<AddProvider
+	registryOptions={REGISTRIES}
+	bind:agent={agent.current}
+	bind:registry={registry.current}
+>
 	{@render children()}
 </AddProvider>

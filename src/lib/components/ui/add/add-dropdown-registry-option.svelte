@@ -2,7 +2,7 @@
 	import * as DropdownMenu from '$lib/components/ui/dropdown-menu';
 	import { useAddDropdownRegistryOption } from '$lib/components/ui/add/add.svelte.js';
 	import { box } from 'svelte-toolbelt';
-	import type { ComponentProps } from 'svelte';
+	import type { ComponentProps, Component } from 'svelte';
 	import { cn } from '$lib/utils';
 	import CheckIcon from '@lucide/svelte/icons/check';
 	import AddRegistryLogo from './add-registry-logo.svelte';
@@ -10,8 +10,12 @@
 	let {
 		registry,
 		class: className,
+		fallbackIcon,
 		...rest
-	}: Omit<ComponentProps<typeof DropdownMenu.Item>, 'onSelect'> & { registry: string } = $props();
+	}: Omit<ComponentProps<typeof DropdownMenu.Item>, 'onSelect'> & {
+		registry: string;
+		fallbackIcon?: Component<{ class?: string; width?: number; height?: number }>;
+	} = $props();
 
 	const dropdownRegistryOptionState = useAddDropdownRegistryOption({
 		registry: box.with(() => registry)
@@ -24,7 +28,7 @@
 	{...dropdownRegistryOptionState.props}
 >
 	<span class="flex items-center gap-2">
-		<AddRegistryLogo registry={dropdownRegistryOptionState.opts.registry.current} />
+		<AddRegistryLogo registry={dropdownRegistryOptionState.opts.registry.current} {fallbackIcon} />
 		{registry}
 	</span>
 	<div class="size-4">

@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { REGISTRIES } from '$lib/constants';
 	import * as Add from '$lib/components/ui/add';
+	import RegistryKitLogo from '$lib/components/logos/registry-kit.svelte';
 
 	type Props = {
 		item: string;
@@ -22,7 +23,7 @@
 				{/each}
 				<Add.DropdownSeparator />
 				{#each REGISTRIES as registry (registry)}
-					<Add.DropdownRegistryOption {registry} />
+					<Add.DropdownRegistryOption {registry} fallbackIcon={RegistryKitLogo} />
 				{/each}
 				<Add.DropdownSeparator />
 				<Add.DropdownDocsLink />

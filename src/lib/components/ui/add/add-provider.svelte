@@ -10,7 +10,12 @@
 		children: Snippet;
 	};
 
-	let { agent, registry, registryOptions, children }: Props<RegistryOptions> = $props();
+	let {
+		agent = $bindable(),
+		registry = $bindable(),
+		registryOptions,
+		children
+	}: Props<RegistryOptions> = $props();
 
 	useAddProvider({
 		registryOptions: box.with(() => registryOptions),
