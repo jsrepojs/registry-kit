@@ -14,7 +14,8 @@
 		"format": "prettier --write .",
 		"lint": "prettier --check . && eslint .",
 		"registry:build": "jsrepo build",
-		"registry:deploy": "jsrepo build --watch"
+		"registry:deploy": "jsrepo build --watch",
+		"ci:release": "jsrepo publish && changeset tag"
 	},
 	"devDependencies": {
 		"@changesets/cli": "^2.29.7",
