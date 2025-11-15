@@ -64,7 +64,8 @@ export default defineConfig({
 					},
 					{
 						path: 'src/lib/demos/demo-demo.svelte',
-						target: 'src/lib/demos/demo-demo.svelte'
+						target: 'src/lib/demos/demo-demo.svelte',
+						dependencyResolution: 'manual'
 					}
 				]
 			},
