@@ -10,7 +10,20 @@
 	import LightbulbIcon from '@lucide/svelte/icons/lightbulb';
 </script>
 
-<MetaTags title="registry-kit - Beautiful, fully composable, components for your registry." />
+<MetaTags
+	title="registry-kit - Beautiful, fully composable, components for your registry."
+	description="Beautiful, fully composable, components for your registry."
+	openGraph={{
+		images: [
+			{
+				url: 'https://registry-kit.dev/og.png',
+				width: 1074,
+				height: 638,
+				alt: 'registry-kit - Beautiful, fully composable, components for your registry.'
+			}
+		]
+	}}
+/>
 
 <header class="flex justify-end px-4 py-2">
 	<div class="flex items-center gap-2">

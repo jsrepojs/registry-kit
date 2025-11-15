@@ -1,10 +1,8 @@
 {
-  "mode": "pre",
-  "tag": "beta",
-  "initialVersions": {
-    "@registry/kit": "0.0.0"
-  },
-  "changesets": [
-    "wild-cats-visit"
-  ]
+	"mode": "pre",
+	"tag": "beta",
+	"initialVersions": {
+		"@registry/kit": "0.0.0"
+	},
+	"changesets": ["wild-cats-visit"]
 }
