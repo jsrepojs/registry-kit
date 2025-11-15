@@ -1,6 +1,5 @@
 <script lang="ts">
 	import '../app.css';
-	import favicon from '$lib/assets/favicon-light.svg';
 	import { ModeWatcher } from 'mode-watcher';
 	import { AddProvider } from '$lib/components/ui/add';
 	import { REGISTRIES } from '$lib/constants';
@@ -17,10 +16,6 @@
 		'@registry/kit'
 	);
 </script>
-
-<svelte:head>
-	<link rel="icon" href={favicon} />
-</svelte:head>
 
 <!-- only inject analytics in production -->
 {#if !dev}

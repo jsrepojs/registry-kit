@@ -2256,7 +2256,7 @@
 				{
 					"ecosystem": "js",
 					"name": "isomorphic-dompurify",
-					"version": "^2.31.0"
+					"version": "2.25.0"
 				},
 				{
 					"ecosystem": "js",
