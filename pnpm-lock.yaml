@@ -27,6 +27,9 @@ importers:
       '@lucide/svelte':
         specifier: ^0.544.0
         version: 0.544.0(svelte@5.43.6)
+      '@lukulent/svelte-umami':
+        specifier: ^0.0.4
+        version: 0.0.4(svelte@5.43.6)
       '@shikijs/langs':
         specifier: ^3.12.2
         version: 3.15.0
@@ -511,6 +514,11 @@ packages:
     resolution: {integrity: sha512-9f9O6uxng2pLB01sxNySHduJN3HTl5p0HDu4H26VR51vhZfiMzyOMe9Mhof3XAk4l813eTtl+/DYRvGyoRR+yw==}
     peerDependencies:
       svelte: ^5
+
+  '@lukulent/svelte-umami@0.0.4':
+    resolution: {integrity: sha512-LXmo0oa8lPg032gfqFQgRhEJgUDqgsOzyqPSXtJ2nKlUAYhsPbB0EXwgOjrj7+IfeiBEiq2c6vfv0VV5Jvv/PA==}
+    peerDependencies:
+      svelte: ^4.0.0 || ^5.0.0
 
   '@manypkg/find-root@1.1.0':
     resolution: {integrity: sha512-mki5uBvhHzO8kYYix/WRy2WX8S3B5wdVSc9D6KcU5lQNglP2yt58/VfLuAK49glRXChosY8ap2oJ1qgma3GUVA==}
@@ -2930,6 +2938,11 @@ snapshots:
 
   '@lucide/svelte@0.544.0(svelte@5.43.6)':
     dependencies:
+      svelte: 5.43.6
+
+  '@lukulent/svelte-umami@0.0.4(svelte@5.43.6)':
+    dependencies:
+      esm-env: 1.2.2
       svelte: 5.43.6
 
   '@manypkg/find-root@1.1.0':

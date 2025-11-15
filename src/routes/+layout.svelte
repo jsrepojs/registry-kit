@@ -6,6 +6,8 @@
 	import { REGISTRIES } from '$lib/constants';
 	import { PersistedState } from 'runed';
 	import type { Agent } from '$lib/components/ui/add';
+	import { dev } from '$app/environment';
+	import { UmamiAnalytics } from '@lukulent/svelte-umami';
 
 	let { children } = $props();
 
@@ -19,6 +21,14 @@
 <svelte:head>
 	<link rel="icon" href={favicon} />
 </svelte:head>
+
+<!-- only inject analytics in production -->
+{#if !dev}
+	<UmamiAnalytics
+		srcURL="https://cloud.umami.is/script.js"
+		websiteID="af153ecf-98d5-408c-bfa5-1ab1aceca5cf"
+	/>
+{/if}
 
 <ModeWatcher />
 <AddProvider

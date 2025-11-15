@@ -23,6 +23,7 @@
 		"@eslint/js": "^9.38.0",
 		"@internationalized/date": "^3.10.0",
 		"@lucide/svelte": "^0.544.0",
+		"@lukulent/svelte-umami": "^0.0.4",
 		"@shikijs/langs": "^3.12.2",
 		"@shikijs/themes": "^3.12.2",
 		"@sveltejs/adapter-vercel": "^6.0.0",
