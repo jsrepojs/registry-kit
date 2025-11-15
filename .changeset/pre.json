@@ -2,6 +2,6 @@
 	"mode": "pre",
 	"tag": "beta",
 	"initialVersions": {
-		"@registry/kit": "0.0.1"
+		"@registry/kit": "0.0.0"
 	}
 }
