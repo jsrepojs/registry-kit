@@ -27,7 +27,11 @@ this is a bit weird but we actually portal the code to the code tab so that
 we don't have to render the code every time we switch tabs 
 -->
 
-<Tabs.Content id="{uid}-code" value="code" class={cn('rounded-md border border-border')} {...rest}
+<Tabs.Content
+	id="{uid}-code"
+	value="code"
+	class={cn('rounded-md border border-border', className)}
+	{...rest}
 ></Tabs.Content>
 
 <Portal to="#{uid}-code">

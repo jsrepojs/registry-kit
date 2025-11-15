@@ -1,7 +1,7 @@
 <script lang="ts">
 	import '../app.css';
 	import favicon from '$lib/assets/favicon-light.svg';
-	import { ModeWatcher, mode } from 'mode-watcher';
+	import { ModeWatcher } from 'mode-watcher';
 	import { AddProvider } from '$lib/components/ui/add';
 	import { REGISTRIES } from '$lib/constants';
 	import { PersistedState } from 'runed';

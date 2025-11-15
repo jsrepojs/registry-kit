@@ -1,7 +1,6 @@
 <script lang="ts">
 	import * as ToggleGroup from '$lib/components/ui/toggle-group';
 	import TabletIcon from '@lucide/svelte/icons/tablet';
-	import { useDemoSizeControl } from './demo.svelte.js';
 	import type { ComponentProps } from 'svelte';
 	import { cn } from '$lib/utils.js';
 	import { controlVariants } from './index.js';
@@ -14,8 +13,6 @@
 	}: Omit<ComponentProps<typeof ToggleGroup.Item>, 'value' | 'aria-label'> & {
 		value?: number;
 	} = $props();
-
-	const sizeControlState = useDemoSizeControl();
 </script>
 
 <ToggleGroup.Item

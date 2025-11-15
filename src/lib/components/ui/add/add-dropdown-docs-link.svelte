@@ -2,6 +2,7 @@
 	import * as DropdownMenu from '$lib/components/ui/dropdown-menu';
 	import type { ComponentProps } from 'svelte';
 	import ExternalLink from '@lucide/svelte/icons/external-link';
+	import { cn } from '$lib/utils';
 
 	let {
 		class: className,
@@ -10,6 +11,7 @@
 </script>
 
 <DropdownMenu.Item
+	class={cn('', className)}
 	onSelect={() => window.open('https://v3.jsrepo.dev/docs/cli/add', '_blank')}
 	{...rest}
 >

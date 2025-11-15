@@ -14,7 +14,8 @@ export default defineConfig({
 	},
 	registry: {
 		name: '@registry/kit',
-		outputs: [repository({ format: true }), distributed({ dir: 'static/r' })],
+		access: 'private',
+		outputs: [repository({ format: true }), distributed({ dir: 'static/r', format: true })],
 		items: [
 			// registry kit
 			{
@@ -27,8 +28,9 @@ export default defineConfig({
 					},
 					{
 						path: 'src/lib/demos/add-demo.svelte',
-						type: 'registry:example',
-						dependencyResolution: 'manual'
+						role: 'example',
+						dependencyResolution: 'manual',
+						type: 'block'
 					}
 				]
 			},
@@ -41,19 +43,9 @@ export default defineConfig({
 						path: 'src/lib/components/ui/demo'
 					},
 					{
-						path: 'src/routes/demos/[...path]/+page.svelte',
+						path: 'src/routes/demos/[...path]',
 						type: 'page',
-						target: 'src/routes/demos/[...path]/+page.svelte'
-					},
-					{
-						path: 'src/routes/demos/[...path]/+layout@.svelte',
-						type: 'page',
-						target: 'src/routes/demos/[...path]/+layout@.svelte'
-					},
-					{
-						path: 'src/routes/demos/[...path]/+page.server.ts',
-						type: 'page',
-						target: 'src/routes/demos/[...path]/+page.server.ts'
+						target: 'src/routes/demos/[...path]'
 					},
 					{
 						path: 'src/lib/demos/demo-demo.svelte',

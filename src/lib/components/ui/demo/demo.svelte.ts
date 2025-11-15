@@ -121,10 +121,6 @@ class FullscreenState {
 	}
 }
 
-class SizeControlState {
-	constructor(readonly root: DemoState) {}
-}
-
 export function useDemo(props: DemoRootProps) {
 	return DemoRootCtx.set(new DemoState(props));
 }
@@ -147,8 +143,4 @@ export function useDemoFullscreen() {
 
 export function useDemoRefresh() {
 	return new RefreshState(DemoRootCtx.get());
-}
-
-export function useDemoSizeControl() {
-	return new SizeControlState(DemoRootCtx.get());
 }

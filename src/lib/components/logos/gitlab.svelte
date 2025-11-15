@@ -1,6 +1,11 @@
 <script lang="ts">
-	import type { Props } from '.';
 	import { cn } from '$lib/utils';
+
+	type Props = {
+		class?: string;
+		width?: number;
+		height?: number;
+	};
 
 	let { class: className, ...rest }: Props = $props();
 </script>
