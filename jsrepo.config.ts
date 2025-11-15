@@ -20,7 +20,6 @@ export default defineConfig({
 		bugs: 'https://github.com/jsrepojs/registry-kit/issues',
 		repository: 'https://github.com/jsrepojs/registry-kit',
 		tags: ['svelte', 'sveltekit', 'registry', 'components', 'jsrepo'],
-		access: 'private',
 		outputs: [repository({ format: true }), distributed({ dir: 'static/r', format: true })],
 		defaultPaths: {
 			ui: '$lib/components/ui',
