@@ -5,17 +5,32 @@ export default defineConfig({
 	registries: ['@ieedan/shadcn-svelte-extras@beta'],
 	paths: {
 		ui: '$lib/components/ui',
-		blocks: '$lib/components',
-		hooks: '$lib/hooks',
+		block: '$lib/components',
 		hook: '$lib/hooks',
-		actions: '$lib/actions',
-		utils: '$lib/utils',
+		action: '$lib/actions',
+		util: '$lib/utils',
 		lib: '$lib'
 	},
 	registry: {
 		name: '@registry/kit',
+		description: 'Components for your registry',
+		version: 'package',
+		homepage: 'https://registry-kit.dev',
+		authors: ['Aidan Bleser'],
+		bugs: 'https://github.com/jsrepojs/registry-kit/issues',
+		repository: 'https://github.com/jsrepojs/registry-kit',
+		tags: ['svelte', 'sveltekit', 'registry', 'components', 'jsrepo'],
 		access: 'private',
 		outputs: [repository({ format: true }), distributed({ dir: 'static/r', format: true })],
+		defaultPaths: {
+			ui: '$lib/components/ui',
+			block: '$lib/components',
+			logo: '$lib/components/logos',
+			hook: '$lib/hooks',
+			action: '$lib/actions',
+			util: '$lib/utils',
+			lib: '$lib'
+		},
 		items: [
 			// registry kit
 			{
@@ -49,8 +64,7 @@ export default defineConfig({
 					},
 					{
 						path: 'src/lib/demos/demo-demo.svelte',
-						type: 'registry:example',
-						dependencyResolution: 'manual'
+						target: 'src/lib/demos/demo-demo.svelte'
 					}
 				]
 			},
@@ -59,6 +73,7 @@ export default defineConfig({
 				{
 					name: 'pnpm-logo',
 					type: 'logo',
+					add: 'when-needed',
 					files: [
 						{
 							path: 'src/lib/components/logos/pnpm.svelte'
@@ -68,6 +83,7 @@ export default defineConfig({
 				{
 					name: 'npm-logo',
 					type: 'logo',
+					add: 'when-needed',
 					files: [
 						{
 							path: 'src/lib/components/logos/npm.svelte'
@@ -77,6 +93,7 @@ export default defineConfig({
 				{
 					name: 'yarn-logo',
 					type: 'logo',
+					add: 'when-needed',
 					files: [
 						{
 							path: 'src/lib/components/logos/yarn.svelte'
@@ -86,6 +103,7 @@ export default defineConfig({
 				{
 					name: 'bun-logo',
 					type: 'logo',
+					add: 'when-needed',
 					files: [
 						{
 							path: 'src/lib/components/logos/bun.svelte'
@@ -95,6 +113,7 @@ export default defineConfig({
 				{
 					name: 'jsrepo-logo',
 					type: 'logo',
+					add: 'when-needed',
 					files: [
 						{
 							path: 'src/lib/components/logos/jsrepo.svelte'
@@ -104,6 +123,7 @@ export default defineConfig({
 				{
 					name: 'github-logo',
 					type: 'logo',
+					add: 'when-needed',
 					files: [
 						{
 							path: 'src/lib/components/logos/github.svelte'
@@ -113,6 +133,7 @@ export default defineConfig({
 				{
 					name: 'gitlab-logo',
 					type: 'logo',
+					add: 'when-needed',
 					files: [
 						{
 							path: 'src/lib/components/logos/gitlab.svelte'
@@ -122,6 +143,7 @@ export default defineConfig({
 				{
 					name: 'bitbucket-logo',
 					type: 'logo',
+					add: 'when-needed',
 					files: [
 						{
 							path: 'src/lib/components/logos/bitbucket.svelte'
@@ -131,6 +153,7 @@ export default defineConfig({
 				{
 					name: 'azure-devops-logo',
 					type: 'logo',
+					add: 'when-needed',
 					files: [
 						{
 							path: 'src/lib/components/logos/azure-devops.svelte'
@@ -140,23 +163,24 @@ export default defineConfig({
 				{
 					name: 'registry-kit-logo',
 					type: 'logo',
+					add: 'when-needed',
 					files: [
 						{
 							path: 'src/lib/components/logos/registry-kit.svelte'
 						}
 					]
-				},
-				{
-					name: 'utils',
-					type: 'lib',
-					add: 'when-needed',
-					files: [
-						{
-							path: 'src/lib/utils.ts'
-						}
-					]
 				}
 			],
+			{
+				name: 'utils',
+				type: 'lib',
+				add: 'when-needed',
+				files: [
+					{
+						path: 'src/lib/utils.ts'
+					}
+				]
+			},
 
 			// shadcn-svelte
 			...[
