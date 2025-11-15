@@ -1,38 +1,19 @@
-# sv
+# @registry/kit
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+[![jsrepo](https://jsrepo.com/badges/@registry/kit)](https://jsrepo.com/@registry/kit)
+[![jsrepo](https://jsrepo.com/badges/@registry/kit/dm)](https://jsrepo.com/@registry/kit)
 
-## Creating a project
+Components to build your registry.
 
-If you're seeing this, you've probably already done this step. Congrats!
+## Getting started
 
-```sh
-# create a new project in the current directory
-npx sv create
-
-# create a new project in my-app
-npx sv create my-app
+```bash
+jsrepo init @registry/kit
 ```
 
-## Developing
+## Components
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```sh
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```sh
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+| Component | Description                                       | Source                                                                                       |
+| --------- | ------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| `Add`     | Allow users to copy the jsrepo add command.       | [View Source](https://github.com/jsrepojs/registry-kit/tree/main/src/lib/components/ui/add)  |
+| `Demo`    | Show off your components in an iframe based demo. | [View Source](https://github.com/jsrepojs/registry-kit/tree/main/src/lib/components/ui/demo) |

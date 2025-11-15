@@ -3,6 +3,7 @@
 	"private": true,
 	"version": "0.0.1",
 	"type": "module",
+	"packageManager": "pnpm@10.17.1",
 	"scripts": {
 		"dev": "concurrently -n \"registry,app\" -c \"blue,green\" \"jsrepo build --watch\" \"vite dev\"",
 		"build": "vite build",
