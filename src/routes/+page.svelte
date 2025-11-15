@@ -13,7 +13,17 @@
 <MetaTags
 	title="registry-kit - Beautiful, fully composable, components for your registry."
 	description="Beautiful, fully composable, components for your registry."
+	canonical="https://registry-kit.dev"
+	twitter={{
+		title: 'registry-kit - Beautiful, fully composable, components for your registry.',
+		description: 'Beautiful, fully composable, components for your registry.',
+		cardType: 'summary_large_image',
+		image: 'https://registry-kit.dev/og.png'
+	}}
 	openGraph={{
+		title: 'registry-kit - Beautiful, fully composable, components for your registry.',
+		description: 'Beautiful, fully composable, components for your registry.',
+		siteName: 'registry-kit.dev',
 		images: [
 			{
 				url: 'https://registry-kit.dev/og.png',
