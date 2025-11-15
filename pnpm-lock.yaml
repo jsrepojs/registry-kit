@@ -73,8 +73,8 @@ importers:
         specifier: ^16.4.0
         version: 16.5.0
       isomorphic-dompurify:
-        specifier: ^2.31.0
-        version: 2.31.0
+        specifier: 2.27.0
+        version: 2.27.0
       jsrepo:
         specifier: 3.0.0-beta.19
         version: 3.0.0-beta.19(svelte@5.43.6)
@@ -1571,9 +1571,9 @@ packages:
   isexe@2.0.0:
     resolution: {integrity: sha512-RHxMLp9lnKHGHRng9QFhRCMbYAcVpn69smSGcq3f36xjgVVWThj4qqLbTLlq7Ssj8B+fIQ1EuCEGI2lKsyQeIw==}
 
-  isomorphic-dompurify@2.31.0:
-    resolution: {integrity: sha512-/XPACpfVJeEiy28UgkBWUWdhgKN8xwFYkoVFsqrcSJJ5pXZ3HStuF3ih/Hr8PwhCXHqFAys+b4tcgw0pbUT4rw==}
-    engines: {node: '>=20.19.5'}
+  isomorphic-dompurify@2.27.0:
+    resolution: {integrity: sha512-Jf7dKliSO3iuNBPAQWSP610K6H38aiZ52Y/YxAIPh9NH3Wc6D1ujlS4y6lvIn11bCLT/hLLabXkmikLlb4SaeA==}
+    engines: {node: '>=18'}
 
   jackspeak@3.4.3:
     resolution: {integrity: sha512-OGlZQpz2yfahA/Rd1Y8Cd9SIEsqvXkLVoSw/cgwhnhFMDbsQFeZYoJJ7bIZBS9BcamUW96asq/npPWugM+RQBw==}
@@ -4011,7 +4011,7 @@ snapshots:
 
   isexe@2.0.0: {}
 
-  isomorphic-dompurify@2.31.0:
+  isomorphic-dompurify@2.27.0:
     dependencies:
       dompurify: 3.3.0
       jsdom: 27.1.0
