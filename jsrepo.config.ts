@@ -6,6 +6,7 @@ export default defineConfig({
 	paths: {
 		ui: '$lib/components/ui',
 		block: '$lib/components',
+		logo: '$lib/components/logos',
 		hook: '$lib/hooks',
 		action: '$lib/actions',
 		util: '$lib/utils',

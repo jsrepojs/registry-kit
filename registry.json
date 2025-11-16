@@ -366,7 +366,7 @@
 					"relativePath": "src/lib/components/ui/add/add-group-separator.svelte",
 					"_imports_": [
 						{
-							"import": "../separator",
+							"import": "$lib/components/ui/separator",
 							"item": "separator",
 							"file": {
 								"type": "ui",
