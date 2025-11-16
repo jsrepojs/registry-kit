@@ -3,7 +3,7 @@
 [![jsrepo](https://jsrepo.com/badges/@registry/kit)](https://jsrepo.com/@registry/kit)
 [![jsrepo](https://jsrepo.com/badges/@registry/kit/dm)](https://jsrepo.com/@registry/kit)
 
-Components to build your registry.
+Beautiful, fully composable, components for your registry.
 
 ## Getting started
 
