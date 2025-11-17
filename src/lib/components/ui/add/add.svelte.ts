@@ -28,6 +28,7 @@ export function useAddProvider<RegistryOptions extends readonly string[]>(
 
 export type RootProps = ReadableBoxedValues<{
 	item: string;
+	withoutRegistry: boolean;
 }>;
 
 class AddRootState {
@@ -46,12 +47,14 @@ class AddRootState {
 		const command = resolveCommand(this.agent, 'execute', [
 			'jsrepo',
 			'add',
-			`${this.registry}/${this.opts.item.current}`
+			this.opts.withoutRegistry.current
+				? this.opts.item.current
+				: `${this.registry}/${this.opts.item.current}`
 		]);
 
 		return command
 			? `${command.command} ${command.args.join(' ')}`
-			: `npx jsrepo add ${this.registry}/${this.opts.item.current}`;
+			: `npx jsrepo add ${this.opts.withoutRegistry.current ? this.opts.item.current : `${this.registry}/${this.opts.item.current}`}`;
 	});
 
 	initCommand: string = $derived.by(() => {
