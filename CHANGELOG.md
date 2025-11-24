@@ -1,5 +1,11 @@
 # @registry/kit
 
+## 0.0.4
+
+### Patch Changes
+
+- fix: ensure the withoutRegistry prop is passed ([`b153103`](https://github.com/jsrepojs/registry-kit/commit/b153103f3eaa9c84d53532b30ecc8cc4a6f7aa54))
+
 ## 0.0.3
 
 ### Patch Changes
