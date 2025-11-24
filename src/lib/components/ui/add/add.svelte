@@ -5,13 +5,15 @@
 
 	type Props = {
 		item: string;
+		withoutRegistry: boolean;
 		children: Snippet;
 	};
 
-	let { item, children }: Props = $props();
+	let { item, withoutRegistry, children }: Props = $props();
 
 	useAdd({
-		item: box.with(() => item)
+		item: box.with(() => item),
+		withoutRegistry: box.with(() => withoutRegistry)
 	});
 </script>
 
