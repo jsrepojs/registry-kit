@@ -1,5 +1,11 @@
 # @registry/kit
 
+## 0.0.5
+
+### Patch Changes
+
+- fix: make withoutRegistry optional ([`81eb4d6`](https://github.com/jsrepojs/registry-kit/commit/81eb4d6794fa6a87bee297847a1556df9d0c8301))
+
 ## 0.0.4
 
 ### Patch Changes
