@@ -1,5 +1,11 @@
 # @registry/kit
 
+## 0.0.3
+
+### Patch Changes
+
+- chore: v3 release updates ([`da2ba7c`](https://github.com/jsrepojs/registry-kit/commit/da2ba7c87e859cf5b28da557f983a203d0c7d330))
+
 ## 0.0.2
 
 ### Patch Changes
