@@ -2,7 +2,7 @@ import { defineConfig } from 'jsrepo';
 import { repository, distributed } from 'jsrepo/outputs';
 
 export default defineConfig({
-	registries: ['@ieedan/shadcn-svelte-extras@beta'],
+	registries: ['@ieedan/shadcn-svelte-extras'],
 	paths: {
 		ui: '$lib/components/ui',
 		block: '$lib/components',
